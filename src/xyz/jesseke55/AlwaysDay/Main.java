@@ -16,6 +16,7 @@ public class Main extends JavaPlugin implements Listener {
     FileConfiguration config = getConfig();
 
 
+
     public void onEnable(){
         getLogger().info("-------------------------");
         getLogger().info("");
@@ -29,7 +30,7 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().info("-------------------------");
 
 
-        config.addDefault("world:", "world");
+        config.addDefault("enabled-world:", "world");
 
         config.options().copyDefaults(true);
         saveConfig();
@@ -39,9 +40,11 @@ public class Main extends JavaPlugin implements Listener {
         BukkitScheduler scheduler = Bukkit.getScheduler();
         scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
             public void run() {
-                Bukkit.getWorld(config.getString("world")).setTime(0L);
+                Bukkit.getWorld(config.getString("enabled-world")).setTime(0L);
             }
         }, 60L, 60L);
 
     }
+
+
 }
