@@ -12,10 +12,6 @@ import org.bukkit.scheduler.BukkitScheduler;
  */
 public class Main extends JavaPlugin implements Listener {
 
-
-    FileConfiguration config = getConfig();
-
-
     public void onEnable(){
         getLogger().info("-------------------------");
         getLogger().info("");
@@ -28,20 +24,17 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().info("");
         getLogger().info("-------------------------");
 
+        if(!getConfig().contains("worlds")) {
+            getConfig().set("worlds", new ArrayList<>());
+            saveConfig();
+        }
 
-        config.addDefault("world:", "world");
-
-        config.options().copyDefaults(true);
-        saveConfig();
-
-
-
-        BukkitScheduler scheduler = Bukkit.getScheduler();
-        scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
-            public void run() {
-                Bukkit.getWorld(config.getString("world")).setTime(0L);
+        Bukkit.getScheduler().scheduleAsyncRepeatingTask(this, () -> {
+            for(String worldName : getConfig().getStringList("worlds")) {
+                if(Bukkit.getWorld(worldName) != null) {
+                   Bukkit.getWorld(worldName).setTime(0L); 
+                }
             }
         }, 60L, 60L);
-
     }
 }
