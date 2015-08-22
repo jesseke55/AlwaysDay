@@ -72,6 +72,9 @@ public class Main extends JavaPlugin implements Listener {
                     }
 
                 }
+
+
+                
             } else if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("help")) {
                     if (sender.hasPermission("alwaysday.main.help")) {
