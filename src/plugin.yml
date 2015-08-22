@@ -11,4 +11,4 @@ commands:
     alwaysreload:
       usage: /<command>
       description: Reload the config
-      aliases:[day4reload]
+      aliases: [day4reload]
