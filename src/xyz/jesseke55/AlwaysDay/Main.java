@@ -65,6 +65,7 @@ public class Main extends JavaPlugin implements Listener {
                     if (args[0].equalsIgnoreCase("reload")) {
                         if (sender.hasPermission("alwaysday.reload")) {
                             reloadConfig();
+                            sender.sendMessage(prefix + "Has been reloaded!");
                         } else {
                             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cYou dont`t have permission!"));
                         }
