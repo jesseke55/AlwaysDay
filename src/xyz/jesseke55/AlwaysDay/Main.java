@@ -63,7 +63,7 @@ public class Main extends JavaPlugin implements Listener {
                     }
                 } else if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("reload")) {
-                        if (sender.hasPermission("alwaysday.reload")) {
+                        if (sender.hasPermission("alwaysday.main.reload")) {
                             reloadConfig();
                             sender.sendMessage(prefix + "Has been reloaded!");
                         } else {
@@ -74,7 +74,7 @@ public class Main extends JavaPlugin implements Listener {
                 }
             } else if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("help")) {
-                    if (sender.hasPermission("alwaysday.help")) {
+                    if (sender.hasPermission("alwaysday.main.help")) {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a-----------------------"));
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6/alwaysday - &eMain command"));

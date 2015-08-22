@@ -17,3 +17,19 @@ commands:
       usage: /<command>
       description: Gives you some help.
       aliases: [day4help]
+
+
+permissions:
+ alwaysday.*:
+   alwaysday.main:
+     default: false
+   alwaysday.main.reload:
+     default: false
+   alwaysday.main.help:
+     default: false
+ alwaysday.main:
+   default: false
+ alwaysday.main.reload:
+   default: false
+ alwaysday.main.help:
+   default: false
