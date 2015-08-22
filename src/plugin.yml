@@ -3,12 +3,17 @@ version: 0.1-BETA
 main: xyz.jesseke55.AlwaysDay.Main
 website: www.jesseke55.xyz
 authors: [jesseke55, ProtocollWeb]
+description: You wanted to have an world all the time day and don`t know how?, here is then AlwaysDay
 commands:
     alwaysday:
       usage: /<command>
       aliases: [day4ever]
-      description: The main command
+      description: The main command.
     alwaysreload:
       usage: /<command>
-      description: Reload the config
+      description: Reload the config.
       aliases: [day4reload]
+    alwayshelp:
+      usage: /<command>
+      description: Gives you some help.
+      aliases: [day4help]

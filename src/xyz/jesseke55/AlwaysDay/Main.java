@@ -93,6 +93,9 @@ public class Main extends JavaPlugin implements Listener {
         if (cmd.getName().equalsIgnoreCase("alwaysreload")) {
             getServer().dispatchCommand(sender, "alwaysday reload");
         }
+        else if (cmd.getName().equalsIgnoreCase("alwayshelp")){
+            getServer().dispatchCommand(sender, "alwaysday reload");
+        }
 
             return true;
         }
